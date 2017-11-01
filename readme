@@ -1,0 +1,36 @@
+#######UserName
+Django Administrator : admin/njitv1302
+
+###### Install
+
+cd install;sh install.sh
+
+###### 默认使用sqlite 轻量数据库，若数据库并发较大，请修改数据库配置 使用mysql数据库
+       linux 下需要安装 MySQL-python 即可支持 安装包在操作系统安装包中可以找到
+       然后打开如下配置就行了：
+
+       DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'commondj3Db.sqlite3'),
+        #'ENGINE': 'django.db.backends.mysql',
+        #'NAME': 'commondj3',
+        #'USER': 'slc',
+        #'PASSWORD': 'slcChsvision2017',
+        #'HOST': '112.74.114.37',
+        #'PORT': '3306',
+    }
+}
+
+然后按照数据库同步命令 初始化下数据库  admin用户需要重建 看下manage.py 的帮助即可
+
+
+###### started
+
+nohup /opt/pyrhon36/bin/python3.6 manage.py runserver 0.0.0.0:8099 > /dev/null &
+
+
+###### 数据库同步命令
+
+/opt/pyrhon36/bin/python3.6 manage.py makemigrations
+/opt/pyrhon36/bin/python3.6 manage.py migrate

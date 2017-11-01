@@ -1,0 +1,5 @@
+DEBUG 2017-11-01 12:06:56,796 D:\python3\lib\site-packages\django\db\backends\utils.py utils.py utils execute 90: (0.002) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+DEBUG 2017-11-01 12:06:56,798 D:\python3\lib\site-packages\django\db\backends\utils.py utils.py utils execute 90: (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
